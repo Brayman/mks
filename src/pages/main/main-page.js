@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './header'
 import styled from 'styled-components'
 import Paginator from '../../projects/components/paginator'
 
@@ -9,12 +8,15 @@ const StyledMainBlock = styled.div`
     min-height: 100vh;
     background-image: url(${PictureWithLogo});
     background-size: cover;
-    background-position: center;
+    background-position: left;
+    display: flex;
+    flex-direction: column;
 `
 
 const StyledSection = styled.section`
-padding: 30% 2em 0 2em;
-color: var(--primary-light);
+    padding:2em 2em 4em 2em;
+    margin-top: auto;
+    color: var(--primary-light);
 h2 {
     font-size: 40px;
 }
@@ -24,7 +26,6 @@ h2 {
 const MainPage = () => {
     return (
         <StyledMainBlock>
-            <Header />
             <StyledSection>
                 <h2>
                     One Partner,<br /> One Solution

@@ -7,7 +7,6 @@ const PaginationBlock = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: fixed;
     bottom: 0px;
     width: 40%;
     padding: 1em 0;

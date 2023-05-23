@@ -1,13 +1,39 @@
-import logo from './logo.svg';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/main/main-page';
+import Header from './components/header';
+
+const Route = () => {
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  )
+}
+
+const router = createBrowserRouter([{
+  path: "/",
+  element: <Route />,
+  children: [
+    {
+      index: true,
+      element: <MainPage />
+    },
+    {
+      path: "/contacts",
+      element: <div>contacts</div>
+    }
+  ]
+}])
+
 
 
 
 
 function App() {
   return (
-    <MainPage />
+    <RouterProvider router={router} />
   );
 }
 
