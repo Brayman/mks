@@ -1,11 +1,28 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
+const growing = keyframes`
+    from {
+        
+        padding: 0 0;
+    }
+    to {
+        
+    }
+`
 
 const StyledPreview = styled.div`
     display: flex;
     flex-direction: row;
-    margin: 2em 0;
+    padding: 3em;
+    border-radius: 1em;
+    &:hover {
+        transition: all 1s linear;
+        background-color: #d8d7d770;
+        margin: 1.5em ;
+        padding: 1.5em;
+    }
+    
     div {
         padding:0 1em;
         }
@@ -29,6 +46,8 @@ const PreviewImg = styled.img`
 const PreviewDesc = styled.p`
  color: var(--primary-medium);
 `
+
+
 
 const ObjectPreview = ({ project }) => {
     const { name, location, preview_desc, img } = project

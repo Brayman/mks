@@ -23,7 +23,12 @@ const initialState = [
         ]
     },
     {
-        name: 'Köln'
+        name: 'Köln',
+        img: [
+            '/img/factory1.jpg',
+            '/img/factory2.jpg',
+            '/img/factory3.jpg'
+        ],
     },
     {
         name: 'Essen'

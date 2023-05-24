@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import ObjectsFilter from './objects-filter'
 
 const StyledPage = styled.div`
-    margin: 0 3em;
+    /* margin: 0 3em; */
 `
 
 const ObjectsPage = () => {
