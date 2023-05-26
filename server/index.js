@@ -11,8 +11,10 @@ const router = new Router()
 app.use(router.routes());
 
 router.get('/projects', project.getProjects)
-router.get('/project/:id', project.getProject)
 router.post('/project', project.addProject)
+router.get('/project/:id', project.getProject)
+router.delete('/project/:id', project.deleteProject)
+router.put('/project/:id', project.editProject)
 
 const uri = process.env.MONGO_URI
 

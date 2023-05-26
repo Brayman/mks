@@ -6,19 +6,23 @@ class projectServices {
 
         return await newProject.save()
     }
-    editProject = async () => {
-
+    editProject = async (_id, newProject) => {
+        const updatedProject = await Project.updateOne({ _id }, newProject)
+        console.log(updatedProject);
+        return updatedProject
     }
-    deleteProject = async () => {
-
+    deleteProject = async (id) => {
+        return await Project.findByIdAndDelete(id)
     }
     getProject = async (id) => {
         return await Project.findById(id);
-
     }
-    getProjects = async () => {
-        return await Project.find();
-
+    getProjects = async (filter) => {
+        const findOptions = {}
+        if (filter) {
+            findOptions.tags = filter
+        }
+        return await Project.find(findOptions);
     }
 }
 
