@@ -3,6 +3,7 @@ import './App.css';
 import MainPage from './pages/main/main-page';
 import ObjectsPage from './pages/objects/objects-page';
 import Header from './components/header';
+import About from './pages/about/about';
 
 const Route = () => {
   return (
@@ -22,8 +23,8 @@ const router = createBrowserRouter([{
       element: <MainPage />
     },
     {
-      path: "/contacts",
-      element: <div>contacts</div>
+      path: "/company",
+      element: <About />
     }
   ]
 }])
