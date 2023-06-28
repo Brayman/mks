@@ -1,15 +1,22 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const transperencyHeader = css`
+    position: absolute;
+    color: var(--primary-light);
+    width: calc(100vw - 4em);
+`
 
 const StyledHeader = styled.header`
     display: flex;
-    position: absolute;
-    width: calc(100vw - 4em);
     flex-direction: row;
     border-bottom: solid 1px var(--primary-medium);
+    font-weight: 500;
     padding: 2em;
-    color: ${({ transperency }) => transperency ? 'var(--primary-light)' : 'var(--primary-medium)'};
+    margin-bottom: 1em;
+    color: var(--primary-dark);
+    ${({ transperency }) => transperency ? transperencyHeader : ''};
 `
 
 const Menu = styled.menu`
@@ -21,7 +28,7 @@ const Menu = styled.menu`
 `
 
 const MenuItem = styled(NavLink)`
-    color: var(--primary-light);
+    color: inherit;
     text-decoration: none;
     cursor: pointer;
     &.active {
@@ -71,7 +78,6 @@ const Header = () => {
                     </div>
                 </LanguageOptions> */}
             </Menu>
-
         </StyledHeader>
     )
 }

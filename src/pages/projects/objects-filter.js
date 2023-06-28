@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSearchParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Header = styled.header`
@@ -6,6 +7,7 @@ const Header = styled.header`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 0 3em;
     h2 {
         margin-right: auto;
     }
@@ -25,6 +27,7 @@ const FilterBar = styled.div`
 
 const FilterItem = styled.div`
     padding: 0.5em 3em;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     &:hover {
@@ -35,13 +38,28 @@ const FilterItem = styled.div`
 `
 
 const ObjectsFilter = ({ filters }) => {
+    let [searchParams, setSearchParams] = useSearchParams();
+    console.log(searchParams.get('filter'));
+    const filterClick = (e) => {
+        console.log(e.target);
+        setSearchParams({ filter: e.target.outerText })
+    }
     return (
         <Header>
             <Title>
                 Objects
             </Title>
             <FilterBar>
-                {filters.map((item, i) => <FilterItem key={i}>{item}</FilterItem>)}
+                {filters.map((item, i) => {
+                    return (
+                        <FilterItem
+                            key={i}
+                            onClick={filterClick}
+                        >
+                            {item}
+                        </FilterItem>
+                    )
+                })}
             </FilterBar>
         </Header>
     )
