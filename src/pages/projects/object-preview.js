@@ -53,17 +53,17 @@ const PreviewDesc = styled.p`
 
 
 const ObjectPreview = ({ project }) => {
-    const { name, location, preview_desc, img } = project
+    const { name, location, description, images } = project
     return (
-        <StyledPreview to={`/project/${project.id}`}>
+        <StyledPreview to={`/project/${project._id}`}>
             <Desc>
                 <h4>{name}</h4>
                 {location}
                 <PreviewDesc>
-                    {preview_desc}
+                    {description}
                 </PreviewDesc>
             </Desc>
-            <PreviewImg src={img && img[0]} alt={name} />
+            <PreviewImg src={images && images[0]} alt={name} />
         </StyledPreview>
     )
 }

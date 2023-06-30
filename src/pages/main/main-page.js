@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Paginator from '../../projects/components/paginator'
+import { fetchProjects } from '../../projects/projektsSlice'
+import { useDispatch } from 'react-redux'
 
 const PictureWithLogo = process.env.PUBLIC_URL + '/img/picture-1600.jpg'
 
@@ -24,9 +26,11 @@ h2 {
 `
 
 const MainPage = () => {
+    const dispatch = useDispatch()
     return (
         <StyledMainBlock>
             <StyledSection>
+                <button onClick={() => dispatch(fetchProjects())}>request</button>
                 <h2>
                     One Partner,<br /> One Solution
                 </h2>

@@ -10,7 +10,8 @@ const StyledPage = styled.div`
 `
 
 const ObjectsPage = () => {
-    const ourProjects = useSelector(projects)
+    const ourProjects = useSelector(projects).projects
+    console.log(ourProjects);
     return (
         <StyledPage>
             <ObjectsFilter filters={['Elektromontage',
