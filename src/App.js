@@ -5,6 +5,7 @@ import ObjectsPage from './pages/projects/objects-page';
 import Header from './components/header';
 import About from './pages/about/about';
 import Project from './pages/project-details/project-details';
+import ContactsPage from './pages/contacts/contacts-page';
 
 const Route = () => {
   return (
@@ -34,6 +35,10 @@ const router = createBrowserRouter([{
     {
       path: "/project/:id",
       element: <Project />
+    },
+    {
+      path: "/contacts",
+      element: <ContactsPage />
     }
   ]
 }])
