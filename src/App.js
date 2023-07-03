@@ -4,6 +4,7 @@ import MainPage from './pages/main/main-page';
 import ObjectsPage from './pages/projects/objects-page';
 import Header from './components/header';
 import Project from './pages/project-details/project-details';
+import { fetchProject } from './project/projectSlice';
 
 const Route = () => {
   return (
@@ -28,7 +29,7 @@ const router = createBrowserRouter([{
     },
     {
       path: "/project/:id",
-      element: <Project />
+      element: <Project />,
     }
   ]
 }])

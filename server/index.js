@@ -1,6 +1,9 @@
 const Koa = require('koa');
 const Router = require('@koa/router');
 const cors = require('@koa/cors');
+const bodyParser = require('koa-bodyparser');
+
+
 const mongoose = require('mongoose');
 
 require('dotenv').config();
@@ -10,6 +13,7 @@ const app = new Koa();
 const router = new Router()
 
 app.use(cors());
+app.use(bodyParser());
 app.use(router.routes());
 
 router.get('/projects', project.getProjects)
@@ -19,6 +23,10 @@ router.delete('/project/:id', project.deleteProject)
 router.put('/project/:id', project.editProject)
 
 const uri = process.env.MONGO_URI
+
+app.use(async (ctx) => {
+    console.log(ctx.URL);
+});
 
 mongoose.connect(uri)
     .then(() => console.log('Connected to DB'))

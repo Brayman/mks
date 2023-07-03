@@ -3,7 +3,7 @@ const projectService = require("../services/project")
 class projects {
     addProject = async (ctx) => {
         try {
-            await projectService.addProject()
+            await projectService.addProject(ctx.request.body)
             ctx.status = 201
             ctx.body = { message: 'success!' }
         } catch (error) {

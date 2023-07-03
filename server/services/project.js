@@ -15,6 +15,7 @@ class projectServices {
         return await Project.findByIdAndDelete(id)
     }
     getProject = async (id) => {
+        console.log(id);
         return await Project.findById(id);
     }
     getProjects = async (filter) => {

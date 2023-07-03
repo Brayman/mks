@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ImageCard from '../../components/image-card'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux'
-import { project } from '../../project/projectSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchProject, project } from '../../project/projectSlice'
+import { useParams } from 'react-router-dom'
 
 const Title = styled.h1`
     font-size: 2em;
@@ -45,6 +46,14 @@ const Description = styled(Article)`
 const Project = () => {
     const proj = useSelector(project)
 
+    const dispatch = useDispatch()
+    const params = useParams()
+    useEffect(() => {
+        dispatch(fetchProject(params.id))
+    }, [])
+    if (!proj) {
+        return <div>Loading...</div>
+    }
     return (
         <section>
             <Article>
@@ -60,12 +69,12 @@ const Project = () => {
                 </div>
 
             </Article>
-            <ImageCard images={proj.img} src={proj.img[0]} alt={proj.name} />
+            <ImageCard images={proj.images} src={proj.images[0]} alt={proj.name} />
             <Description>
                 <AboutTitle>
                     About the project
                 </AboutTitle>
-                <p>{proj.desc}</p>
+                <p>{proj.description}</p>
             </Description>
         </section>
     )

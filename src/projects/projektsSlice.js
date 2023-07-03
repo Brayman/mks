@@ -51,7 +51,7 @@ const initialState = {
 }
 
 
-export const projects = state => state.projects
+export const projects = state => state.projects.projects
 
 export const projectsSlice = createSlice({
     name: 'projects',
@@ -74,6 +74,11 @@ export const fetchProjects = () => async dispatch => {
     const res = await API.getProjects()
 
     dispatch(setProjects(res.data))
+}
+export const fetchAddProject = (project) => async dispatch => {
+    console.log('try');
+    const res = await API.addProject(project)
+    dispatch(addProject(res.data))
 }
 
 export const { addProject } = projectsSlice.actions
