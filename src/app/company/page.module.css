@@ -1,0 +1,59 @@
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr max-content;
+    margin-left: 3em;
+}
+
+.page__title {
+    grid-column: 1 / span 2;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 1em 0;
+}
+
+.page__img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.page__text {
+    margin: 3em 0;
+}
+
+.page__text:first-child {
+    margin-top: 0;
+}
+    
+
+.article {
+    margin-top: 2.2em;
+    font-size: 0.9em;
+    color: #939399;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    list-style: none;
+    margin: 0 2em 0 0;
+    padding: 0;
+}
+    
+.nav__item {
+    
+    padding: 0.5em 0;
+    
+}
+.nav__item a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav__item a:active,
+.nav__item a:hover {
+    color: var(--secondary);
+}
+    
