@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 3em;
+}
+
+.headerTitle {
+  flex-grow: 1;
+  min-width: 25%;
+  margin-right: auto;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 3em;
+  border-radius: 1em;
+  text-decoration: none;
+  color: inherit;
+}
+
+  .card:nth-child(odd) {
+    flex-direction: row-reverse;
+    
+}
+
+.card__body {
+  flex-grow: 5;
+}
+
+.body__desc {
+  color: var(--primary-medium);
+  height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__image {
+  flex-grow: 7;
+  object-fit: contain;
+  width: 60%;
+}
