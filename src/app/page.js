@@ -1,12 +1,14 @@
+"use client"
 import React from 'react'
-import styled from 'styled-components'
-import Paginator from '../../projects/components/paginator'
+import Image from 'next/image'
+import Link from 'next/link'
 
-const PictureWithLogo = process.env.PUBLIC_URL + '/img/picture-1600.jpg'
+import styles from './page.module.css'
+import styled from 'styled-components'
+import Paginator from '../components/paginator'
 
 const StyledMainBlock = styled.div`
     min-height: 100vh;
-    background-image: url(${PictureWithLogo});
     background-size: cover;
     background-position: left;
     display: flex;
@@ -23,9 +25,9 @@ h2 {
     
 `
 
-const MainPage = () => {
+export default function MainPage() {
     return (
-        <StyledMainBlock>
+        <StyledMainBlock className={styles.background}>
             <StyledSection>
                 <h2>
                     One Partner,<br /> One Solution
@@ -36,5 +38,3 @@ const MainPage = () => {
         </StyledMainBlock>
     )
 }
-
-export default MainPage
