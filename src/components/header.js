@@ -1,40 +1,41 @@
 "use client"
 
 import React from 'react'
-import { Menu, MenuItem, StyledHeader } from './header.styles'
-
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import s from './header.module.css'
+import classNames from 'classnames'
 
 const Header = () => {
-    // const transperency = useLocation().pathname === '/';
+    const path = usePathname()
+    const transperency = path === '/';
+    const cx = classNames.bind(s)
+    const cn = cx(s.navigation, transperency ? s.nav_home : '')
+    const linkClass = (link) => cx(
+        s.nav__item,
+        { [s.nav__item_active]: link === path }
+    )
     return (
-        <StyledHeader >
-            <h2>MKS ONE SYSTEM</h2>
-            <Menu>
-                <MenuItem
-                    href="/company"
-                >
-                    Company
-                </MenuItem>
-                <MenuItem
-                    href="/projects"
-                >
-                    Projects
-                </MenuItem>
-                <MenuItem
-                    href="/contacts"
-                >
-                    Contacts
-                </MenuItem>
-                {/* <LanguageOptions>
-                    <div>
-                        EN
-                    </div>
-                    <div>
-                        DE
-                    </div>
-                </LanguageOptions> */}
-            </Menu>
-        </StyledHeader>
+        <header className={cn}>
+            <Link
+                href='/'
+                className={s.nav__company}
+            >
+                MKS ONE Systems
+            </Link>
+            <Link
+                href='/company'
+                className={linkClass('/company')}
+            >
+                Company
+            </Link>
+            <Link
+                href='/projects'
+                className={linkClass('/projects')}
+            >
+                Projects
+            </Link>
+        </header>
     )
 }
 
