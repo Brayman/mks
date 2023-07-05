@@ -1,0 +1,38 @@
+.project__article {
+  margin: 1em 10%;
+}
+.page__title {
+  font-size: 2em;
+  margin: 0;
+}
+.project__property {
+  margin: 1em 10%;
+}
+.project__desc {
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-medium);
+}
+.desc__title {
+  margin: 1em 10% 0 1em;
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.definitions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.property {
+  font-weight: 500;
+  color: var(--primary-dark);
+  margin-right: 1em;
+}
+
+.value {
+  color: var(--primary-medium);
+  margin-right: auto;
+}

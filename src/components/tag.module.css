@@ -1,0 +1,16 @@
+.tag {
+  font-size: 14px;
+  display: block;
+  background-color: #7c91a224;
+  color: #000;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  width: min-content;
+  border-radius: 5px;
+}
+
+.tag:hover {
+  color: #B99c66;
+  background-color: #7c91a247;
+}

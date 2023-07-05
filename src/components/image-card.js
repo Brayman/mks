@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react'
 import { MdWest, MdEast } from 'react-icons/md'
 import styled from 'styled-components'
