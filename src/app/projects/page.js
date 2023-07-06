@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectPreview from './project-preview'
 import styles from './page.module.css'
+import Header from '@/components/header/header'
 
 
 export const getProjects = async () => {
@@ -25,6 +26,7 @@ export default async function ObjectsPage() {
                 'Montage von Industriemaschinen', 'Montage von Lagerregalen']} 
                 /> */}
             <div>
+                <Header>Projects</Header>
                 {projects.map((project, i) => <ProjectPreview key={i} project={project} />)}
             </div>
         </div>

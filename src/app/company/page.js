@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './page.module.css'
+import Header from '@/components/header/header'
 
 const About = () => {
     return (
         <segment className={styles.page}>
-            <header className={styles.page__title}>Company</header>
+            <Header className={styles.page__title}>Company</Header>
             <div>
                 <ul className={styles.nav}>
                     <li className={styles.nav__item}> <a href='#about'>About</a></li>

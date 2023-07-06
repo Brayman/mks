@@ -1,0 +1,23 @@
+.Section {
+    display: grid;
+    margin: 0 2em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.SectionTitle {
+    font-size: 2em;
+}
+.Contscts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.ContactTitle {
+    color: var(--primary-medium);
+    font-size: 1em;
+}
+.Contact {
+     display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}

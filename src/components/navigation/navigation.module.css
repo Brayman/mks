@@ -1,6 +1,6 @@
 .navigation {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
     border-bottom: solid 1px var(--primary-medium);
     font-weight: 500;
     padding: 2em;
@@ -27,6 +27,7 @@
     text-decoration: none;
     cursor: pointer;
     padding: 0 0.5em;
+    justify-self: center;
 }
 .nav__item_active  {
     color: var(--secondary);

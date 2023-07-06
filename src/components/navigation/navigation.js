@@ -3,10 +3,10 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import s from './header.module.css'
+import s from './navigation.module.css'
 import classNames from 'classnames'
 
-const Header = () => {
+const Nav = () => {
     const path = usePathname()
     const transperency = path === '/';
     const cx = classNames.bind(s)
@@ -35,8 +35,14 @@ const Header = () => {
             >
                 Projects
             </Link>
+            <Link
+                href='/contacts'
+                className={linkClass('/contacts')}
+            >
+                Contacts
+            </Link>
         </header>
     )
 }
 
-export default Header
+export default Nav
