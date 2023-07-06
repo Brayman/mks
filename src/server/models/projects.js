@@ -1,8 +1,11 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const Schema = mongoose.Schema;
 
-const projectSchema = new Schema({
+const projects = new mongoose.Schema({
+    name: String,
+    summary: String,
+    customer: String,
+    contractor: String,
     location: {
         type: String,
         required: true,
@@ -21,10 +24,7 @@ const projectSchema = new Schema({
     },
     images: {
         type: [String],
-        required: true,
     },
 })
 
-const Project = mongoose.model('Project', projectSchema);
-
-module.exports = Project;
+export default mongoose.models.projects || mongoose.model('projects', projects)

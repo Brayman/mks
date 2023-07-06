@@ -1,0 +1,16 @@
+.definitions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.property {
+  font-weight: 500;
+  color: var(--primary-dark);
+  margin-right: 1em;
+}
+
+.value {
+  color: var(--primary-medium);
+  margin-right: auto;
+}

@@ -1,28 +1,28 @@
-const Project = require("../models/projects");
+import ProjectModel from "../models/projects";
 
 class projectServices {
     addProject = async (project) => {
-        const newProject = new Project(project);
+        const newProject = new ProjectModel(project);
 
         return await newProject.save()
     }
     editProject = async (_id, newProject) => {
-        const updatedProject = await Project.updateOne({ _id }, newProject)
+        const updatedProject = await ProjectModel.updateOne({ _id }, newProject)
         console.log(updatedProject);
         return updatedProject
     }
     deleteProject = async (id) => {
-        return await Project.findByIdAndDelete(id)
+        return await ProjectModel.findByIdAndDelete(id)
     }
     getProject = async (id) => {
-        return await Project.findById(id);
+        return await ProjectModel.findById(id);
     }
     getProjects = async (filter) => {
         const findOptions = {}
         if (filter) {
             findOptions.tags = filter
         }
-        return await Project.find(findOptions);
+        return await ProjectModel.find(findOptions);
     }
 }
 
