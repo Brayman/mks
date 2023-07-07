@@ -1,6 +1,9 @@
+"use client"
+
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+
 
 const PaginationBlock = styled.div`
     background-color: #333333;

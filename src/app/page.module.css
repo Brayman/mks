@@ -1,5 +1,7 @@
-.background {
-  min-height: 100vh;
+
+
+.page {
+    min-height: 100vh;
     background-image: url('/img/picture-1600.jpg');
     background-size: cover;
     background-position: left;
@@ -7,6 +9,16 @@
     flex-direction: column;
 }
 
+.title {
+  padding:2em 2em 4em 2em;
+  margin-top: auto;
+  color: var(--primary-light);
+}
+
+.title__slogan {
+  color: inherit;
+  font-size: 40px;
+}
 
 .main {
   display: flex;
