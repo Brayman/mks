@@ -5,14 +5,14 @@ import Header from '@/components/header/header'
 
 
 export const getProjects = async () => {
-    const URL = process.env.URL;
+    const URL = process.env.VERCEL_URL || process.env.URL;
 
     try {
         const res = await fetch(`${URL}/api/projects`)
         return res.json()
     } catch (error) {
         console.log(error);
-        return []
+        return { type: 'error', message: error }
     }
 
 }
@@ -21,11 +21,13 @@ export default async function ObjectsPage() {
     const projects = await getProjects()
     return (
         <div>
+            {!Array.isArray(projects) && <div>{projects.type}</div>}
             {/* <ObjectsFilter filters={['Elektromontage',
                 'Elektrodemontage',
                 'Montage von Förderbandanlagen',
                 'Montage von Industriemaschinen', 'Montage von Lagerregalen']} 
                 /> */}
+            { }
             <div>
                 <Header>Projects</Header>
                 {projects.map((project, i) => <ProjectPreview key={i} project={project} />)}
