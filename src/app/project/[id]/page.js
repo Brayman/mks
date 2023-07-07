@@ -5,7 +5,7 @@ import Tag from '@/components/tag'
 import Header from '@/components/header/header'
 
 export const getProject = async (id) => {
-    const URL = process.env.VERCEL_URL || process.env.URL;
+    const URL = `https://${process.env.VERCEL_URL}` || process.env.URL;
     try {
         const res = await fetch(`${URL}/api/project/${id}`)
         return res.json()
