@@ -36,3 +36,8 @@
   color: var(--primary-medium);
   margin-right: auto;
 }
+
+.tags {
+  display: flex;
+  flex-direction: row;
+}
