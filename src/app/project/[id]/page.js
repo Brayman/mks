@@ -5,8 +5,9 @@ import Tag from '@/components/tag'
 import Header from '@/components/header/header'
 
 export const getProject = async (id) => {
+    const URL = process.env.URL;
     try {
-        const res = await fetch(`http://localhost:3000/api/project/${id}`)
+        const res = await fetch(`${URL}/api/project/${id}`)
         return res.json()
     } catch (error) {
         console.log(error);

@@ -5,8 +5,10 @@ import Header from '@/components/header/header'
 
 
 export const getProjects = async () => {
+    const URL = process.env.URL;
+
     try {
-        const res = await fetch("http://localhost:3000/api/projects")
+        const res = await fetch(`${URL}/api/projects`)
         return res.json()
     } catch (error) {
         console.log(error);
@@ -17,7 +19,6 @@ export const getProjects = async () => {
 
 export default async function ObjectsPage() {
     const projects = await getProjects()
-
     return (
         <div>
             {/* <ObjectsFilter filters={['Elektromontage',
